@@ -4,7 +4,7 @@ import pickle
 
 
 def handler(event, context):
-    pickle.load(open('/tmp/gib_model.pki', 'rb'))
+    pickle.load(open('/gib_model.pki', 'rb'))
 
     data = {
         'output': 'Hello Test',
