@@ -4,6 +4,7 @@
 import json
 import pickle
 import math
+import boto3
 
 
 def handler(event, context):
