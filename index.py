@@ -4,18 +4,13 @@
 import json
 import pickle
 import math
-import boto3
 
 
 def handler(event, context):
 
     req_name = event['queryStringParameters']['string']
 
-    s3 = boto3.resource('s3')
-    with open('/tmp/gib_model.pki', 'wb') as data:
-        s3.Bucket('aws-codestar-ap-southeast-1-348342725339-gib-detect-pipe').download_fileobj('gib_model.pki', data)
-
-    model_data = pickle.load(open('/tmp/gib_model.pki', 'rb'))
+    model_data = pickle.load(open('./gib_model.pki', 'rb'))
 
     accepted_chars = 'abcdefghijklmnopqrstuvwxyzöäüèéáıçğ-ßó '
     pos = dict([(char, idx) for idx, char in enumerate(accepted_chars)])
