@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import json
 import datetime
 import pickle
@@ -45,8 +48,8 @@ def handler(event, context):
     res = gibberish(req_name)
 
     data = {
-        'gibberish': res,
-        'timestamp': datetime.datetime.utcnow().isoformat()
+        'string': req_name,
+        'gibberish': res
     }
     return {'statusCode': 200,
             'body': json.dumps(data),
