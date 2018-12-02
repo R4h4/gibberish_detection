@@ -40,7 +40,7 @@ def handler(event, context):
         # The exponentiation translates from log probs to probs.
         return math.exp(log_prob / (transition_ct or 1))
 
-    def gibberish(name: str):
+    def gibberish(name):
         model_mat = model_data['mat']
         threshold = model_data['thresh']
         return avg_transition_prob(name, model_mat) < threshold
