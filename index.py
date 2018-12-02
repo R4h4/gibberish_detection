@@ -4,7 +4,7 @@ import pickle
 
 
 def handler(event, context):
-    req_name = event['string']
+    req_name = event["queryStringParameters"]['string']
 
     data = {
         'output': 'Hello Test',
