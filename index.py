@@ -4,7 +4,7 @@ import pickle
 
 
 def handler(event, context):
-    pickle.load(open('/gib_model.pki', 'rb'))
+    req_name = event['string']
 
     data = {
         'output': 'Hello Test',
