@@ -1,8 +1,11 @@
 import json
 import datetime
+import pickle
 
 
 def handler(event, context):
+    pickle.load(open('/tmp/gib_model.pki', 'rb'))
+
     data = {
         'output': 'Hello Test',
         'timestamp': datetime.datetime.utcnow().isoformat()
